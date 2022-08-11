@@ -1,0 +1,252 @@
+
+@import "utilities/variables";
+@import "utilities/contacto";
+
+// MIXINS para flex
+
+@mixin flexColCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin noMargins {
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.headerIndex{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(../img/DSC_0022.jpeg);
+    background-size: 230%;
+    background-repeat: no-repeat;
+    border-image-width: 20%;
+    max-width: 100%;
+    height: 100vh;
+    .divLogo{
+        .logo{
+            height: 6rem;
+            display: block;
+            margin: auto;
+            padding-top: 1rem;
+        }
+    }
+    .menuYpag{
+        margin-top: 1.5rem;
+        .navCel{
+            .navbar{
+                color: $beige;
+                .container-fluid{
+                    color: $beige;
+                    .navbar-toggler{
+                        color: $beige;
+                        span{
+                            color: $beige;
+                        }
+                    }
+                    .collapse{
+                        color: $beige;
+                        ul{
+                            li{
+                                a{
+                                    color: $beige;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    .menuNav{
+        display: none;
+    }
+    .promo{
+        .tit{
+            font-size: 1.5rem;
+            text-align: center;
+            text-shadow: -1px 1px 5px $sombra;
+            color: $beige;
+            margin-top: 11rem;
+        }
+        .subTit{
+            font-size: 1rem;
+            text-align: center;
+            text-shadow: -1px 1px 5px $sombra;
+            color: $beige;
+            margin-top: 1.5rem;
+        }
+    }   
+}
+
+.mainIndex{
+    background-color: $beige;
+    .backFondo{
+        padding-top: 2rem;
+        .uno{
+            width: 95%;
+            margin: auto;
+            .tit{
+                padding: 1.5rem;
+                text-align: center;
+                font-size: 1.5rem;
+                text-decoration: underline;
+                text-shadow: -1px 1px 5px $sombra;
+                color: $verdeOscuro;
+            }
+            .texti{
+                margin-top: -1rem;
+                margin-right: 0.5rem;
+                margin-left: 0.5rem;
+                text-align: center;
+                padding-bottom: 1rem;
+                color: $verdeOscuro;
+            }
+        }
+    }
+    .novedades{
+        background-color: $verdeOscuro;
+        margin: auto;
+        h2{
+            padding: 1.5rem;
+            text-align: center;
+            text-decoration: underline;
+            text-shadow: -1px 1px 5px $sombra;
+            color: $beige;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+        }
+        div{
+            background-color: $verdeOscuro;
+            border: none;
+            img{
+                border-radius: 0;
+                width: 98%;
+                margin: auto;
+            }
+            h3{
+                text-align: center;
+                color: $beige;
+                font-weight: bold;
+            }
+            h4{
+                text-align: center;
+                color: $beige;
+                font-size: 0.9rem;
+                margin-top: 0.8rem;
+                margin-bottom: 0.8rem;
+            }
+            a{
+                background-color: $beige;
+                border: none;
+                color: $verdeOscuro;
+                display: block;
+                width: 40%;            
+                margin: auto;
+            }
+        }
+    }
+    .final{
+        padding-bottom: 3rem;
+        .tit{
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+            text-decoration: underline;
+            text-shadow: -1px 1px 5px $sombra;
+            color: $verdeOscuro; 
+        }
+        .mapa{
+            width: 95%;
+            display: block;
+            margin: auto;
+            box-shadow: -5px 1px 5px $verdeClaro;
+        }
+
+    }
+}
+
+
+
+footer{
+    background-color: rgb(246, 243, 235);
+    box-shadow: -1px 1px 5px $sombra;
+    @include flexColCenter;
+    height: 7rem;
+    font-size: 0.8rem;
+    .social{
+        justify-content: center;
+        @include noMargins;
+        ul{
+            display: flex;
+            align-items: center;
+            @include noMargins;
+            li{
+                list-style: none;
+                margin-top: 0.2rem;
+                img{
+                    height: 2rem;
+                }
+            }
+        }    
+    }
+    .derechos{
+        padding-top: 0.3rem;
+        margin: 0%;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+}
+
+/* MEDIA QUERIES PPAL */
+@media screen and (min-width: 768px){
+    
+    /* INDEX */
+
+    header{
+        .arr{
+            display: none;
+        }
+        .menuYpag{
+            display: none;
+        }
+        .menuNav{
+            display: contents;
+            display: flex;
+            width: 100%;
+            height: 6rem;
+            background-color: $header2;
+            box-shadow: -1px 1px 5px $sombra;
+            div{
+                flex: 50%;
+                img{
+                    height: 4rem;
+                    margin-left: 3rem;
+                    margin-top: 1rem;
+                }
+            }
+            nav{
+                flex: 50%;
+                margin-top: 2.2rem;
+                ul{
+                    list-style: none;
+                    display: flex;          
+                    li{
+                        padding: 1rem;
+                        a{
+                            text-decoration: none;
+                            font-family: 'Source Sans Pro', sans-serif;
+                            font-size: 1.3rem;
+                            color: $colorOscuro;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+}
